@@ -18,7 +18,16 @@ class BukuController extends Controller
 
         $buku = Buku::offset($offset)
             ->limit($limit)
-            ->get();    
+            ->get();   
+            
+        $formatbuku = $buku->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'judul' => $item->judul,
+                'penulis' => $item->penulis,
+                'status_buku' => $item->is_aktif ? 'Tersedia/Aktif' : 'Tidak Tersedia/Nonaktif',
+            ];
+        });
 
         return response()->json([
             'status' => 'success',
@@ -29,7 +38,7 @@ class BukuController extends Controller
                 'total_data' => $totaldata,
                 'total_page' => $totalpage,
             ],
-            'data' => $buku
+            'data' => $formatbuku
         ], 200);
     }
 

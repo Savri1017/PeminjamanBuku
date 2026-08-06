@@ -2,16 +2,16 @@
 
 namespace Database\Seeders;
 
-use App\models\Buku;
+use App\Models\Peminjaman;
 use Illuminate\Database\Seeder;
 
-class BukuSeeder extends Seeder
+class PeminjamanSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Buku::factory(150)->create();
+        Peminjaman::factory(100)->create();
     }
 }
