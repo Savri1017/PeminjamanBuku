@@ -20,7 +20,7 @@ class BukuFactory extends Factory
         return [
             'judul' => $this->faker->sentence(3),
             'penulis' => $this->faker->name(),
-            'is_aktif' => $this->faker->boolean(),
+            'is_aktif' => $this->faker->boolean(100),
             'deleted_at' => null,
         ];
     }

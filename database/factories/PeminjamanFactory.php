@@ -22,7 +22,7 @@ class PeminjamanFactory extends Factory
             'buku_id'         => Buku::inRandomOrder()->first()->id ?? Buku::factory(),
             'nama_peminjam'   => fake()->name(),
             'tanggal_pinjam'  => fake()->dateTimeBetween('now'),
-            'status'          => fake()->randomElement(['Dipinjam', 'Dikembalikan']),
+            'status'          => fake()->randomElement(['Dipinjam',]),
             ]
         ;
     }
