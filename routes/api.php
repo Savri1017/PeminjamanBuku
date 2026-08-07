@@ -17,8 +17,7 @@ Route::controller(BukuController::class)->prefix('buku')->name('buku.')->group(f
     Route::delete('/{id}/force-delete', 'forceDelete');
 });
 
-Route::controller(PeminjamanController::class)->prefix('peminjaman')->name('peminjaman.')->group(function () {
-    Route::get('/', 'index');                           
+Route::controller(PeminjamanController::class)->prefix('peminjaman')->name('peminjaman.')->group(function () {                        
     Route::post('/', 'store');                          
-    Route::patch('/{id}/kembalikan', 'kembalikan');
+    Route::patch('/{id}', 'kembalikan');
 });
